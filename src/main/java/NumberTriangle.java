@@ -89,8 +89,15 @@ public class NumberTriangle {
      *
      */
     public int retrieve(String path) {
-        // TODO implement this method
-        return -1;
+        NumberTriangle currentNode = this;
+        for (char direction: path.toCharArray()){
+            if (direction == 'l'){
+                currentNode = currentNode.left;
+            } else {
+                currentNode = currentNode.right;
+            }
+        }
+        return currentNode.root;
     }
 
     /** Read in the NumberTriangle structure from a file.
